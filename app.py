@@ -1,7 +1,10 @@
-# app.py
 from flask import Flask, jsonify
 
 app = Flask(__name__)
+
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"message": "Product API is running."})
 
 @app.route('/products', methods=['GET'])
 def get_products():
